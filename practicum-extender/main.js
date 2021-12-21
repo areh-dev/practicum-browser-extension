@@ -15,7 +15,10 @@ document.addEventListener('keydown', function (event) {
 
 
 // Делаем элементы 'code' - с возможностью быстрого копирования
-[...document.querySelectorAll('code.code-inline')].forEach(v => {
-	v.style.cursor = 'pointer';
-	v.addEventListener('click', (e) => navigator.clipboard.writeText(e.target.innerText));
-});
+setInterval(() => {
+  [...document.querySelectorAll('code.code-inline')].forEach(v => {
+    if (v.style.cursor === 'pointer') return;
+    v.style.cursor = 'pointer';
+    v.addEventListener('click', (e) => navigator.clipboard.writeText(e.target.innerText));
+  });
+}, 2000);
