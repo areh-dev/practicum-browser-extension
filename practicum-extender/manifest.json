@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "areh/ext для Я.Практикума",
+  "version": "1.0.0",
+  "description": "Добавляет некоторые полезные функции на сайт Яндекс.Практикума: practicum.yandex.ru",
+  "homepage_url": "https://areh.ru/extensions/practicum/",
+  "icons": {
+    "64": "64px.png",
+    "128": "128px.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://practicum.yandex.ru/*"
+      ],
+      "js": [
+        "main.js"
+      ]
+    }
+  ]
+}
